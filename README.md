@@ -57,29 +57,41 @@ Step 2: Generate Visualizations
 ---
 
 ## Classifier Model
-- **Change prompts**: Edit the `PROMPTS` list in `collect_data.py`.
-- **Use real data**: Replace the fake text/image generation in `collect_data.py` with real platform outputs.
-- **Adjust analysis**: Modify `ANALYZE_ACTIONS` in `analyze_demographics.py` to detect only specific attributes.
+  We use the Hugging Face model: `bucketresearch/politicalBiasBERT`
+  This transformer-based model labels text as:
+  - Left
+  - Center
+  - Right
+
+  It helps us quantify political leaning in each LLM response.
 
 ---
 
-## Ethical Considerations
+## Customization
+- To test different prompts or models, modify data/LLM_prompts.csv
 
-- Should platforms mirror real-world employment distributions or strive for equal demographic representation?
-- What are the risks of biased training data?
-- How can over-correcting bias harm platform trust?
+- To use a different classifier, change the model name in analyze_bias.py
+
+- To enhance visualizations, update plotting code in bias_results.py
+
+---
+
+## Ethical Questions
+- Do these models unintentionally promote political ideologies?
+
+- How could biased outputs affect user beliefs or public discourse?
+
+- How should developers balance fairness, transparency, and freedom of expression?
 
 ---
 
 ## Requirements
 
 - Python 3.8+
+- transformers
 - pandas
-- deepface
 - matplotlib
-- seaborn
-- scipy
-- requests
+- numpy
 
 Install all requirements with: pip install -r requirements.txt
 
@@ -88,6 +100,6 @@ Install all requirements with: pip install -r requirements.txt
 ## Author
 
 - Name: Matt Huang, Amit Banik, Tom Kuriakose, Ethan Ondek
-- Class: CSE 3000
+- University of Connecticut — CSE 3000
 - Semester: Spring 2025
 
