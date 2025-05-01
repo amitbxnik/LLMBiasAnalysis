@@ -1,54 +1,62 @@
 # CSE 3000 Final Project - Bias Analysis
 
 ## Project Overview
-This project explores the intersection of technology, ethics, and societal impact by quantitatively analyzing potential demographic bias (such as gender, race, or age) in AI-generated outputs.  
-The goal is to detect and measure bias from platforms (real or simulated) and reflect on the ethical implications.
+This project investigates political bias in large language models (LLMs) by analyzing their responses to politically sensitive prompts. We evaluated models such as OpenAI’s ChatGPT, Anthropic’s Claude, Google’s Gemini, and xAI’s Grok using a transformer-based classifier.
 
-We simulate platform outputs and run demographic analysis to identify disparities.
+The goal is to classify responses as Left, Center, or Right-leaning, visualize distribution patterns, and reflect on the ethical implications of political bias in generative AI.
 
 ---
 
 ## Project Structure
 
 bias_analysis_project/
-- data/
-  - collected_data.csv (collected prompts, texts, image paths)
-  - collected_data_with_demographics.csv (demographic analysis results)
-- images/
-  - (downloaded sample images)
-- scripts/
-  - collect_data.py (script to generate fake data)
-  - analyze_demographics.py (script to analyze demographics)
-  - utils.py (helper functions)
-- requirements.txt
-- README.md
+  - data/
+    - LLM_prompts.csv — Prompt, model, and response dataset
+    - bias_results_hf.csv — Results with political bias labels
+
+  - scripts/
+    - analyze_bias.py — Uses a Hugging Face model to classify LLM responses
+    - bias_results.py — Generates charts and a multipage summary report
+
+  - requirements.txt — Required Python libraries
+  - README.md - Project Documentation
 
 ---
 
 ## Installation
 
-1. Clone this repository: git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git cd YOUR_REPO_NAME
-
+1. Clone this repository: 
+  git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+  cd YOUR_REPO_NAME
 2. Install all required Python libraries: pip install -r requirements.txt
+   pip install -r requirements.txt
 
 ---
 
 ## How to Run
 
-1. Navigate to the `scripts/` directory: cd scripts
+Step 1: Analyze Political Bias
+  Run the script to classify all LLM responses by bias:
+  python scripts/analyze_bias.py
 
-2. Generate fake data: python collect_data.py
+  This creates:
+  - data/bias_results_hf.csv
 
-3. Perform demographic analysis: python analyze_demographics.py
+Step 2: Generate Visualizations
+  Run the following to create summary charts and a PDF report:
+  python scripts/bias_results.py
 
-4. Check results:
-- `data/collected_data.csv`
-- `data/collected_data_with_demographics.csv`
+  This generates:
+  - fig1_bias_distribution.pdf
+  - fig2_bias_by_prompt_horizontal.pdf
+  - fig3_bias_prompt_heatmap.pdf
+  - fig4_model_distributions.pdf
+  - fig5_bias_by_model_grouped.pdf
+  - bias_analysis_report.pdf
 
 ---
 
-## Customizing
-
+## Classifier Model
 - **Change prompts**: Edit the `PROMPTS` list in `collect_data.py`.
 - **Use real data**: Replace the fake text/image generation in `collect_data.py` with real platform outputs.
 - **Adjust analysis**: Modify `ANALYZE_ACTIONS` in `analyze_demographics.py` to detect only specific attributes.
