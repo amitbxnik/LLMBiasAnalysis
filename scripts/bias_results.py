@@ -1,5 +1,4 @@
-# CSE 3000 FINAL PROJECT
-# Amit Banik, Matt Huang, Tom Kuriakose, Ethan Ondek
+# Collaborators: Amit Banik, Matt Huang, Tom Kuriakose, Ethan Ondek
 
 import math
 import numpy as np
