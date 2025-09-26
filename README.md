@@ -1,11 +1,36 @@
 # Large Language Model Bias Analysis
 
 ## Project Overview
-This project investigates political bias in large language models (LLMs) by analyzing their responses to politically sensitive prompts. This project evaluated models such as OpenAI’s ChatGPT, Anthropic’s Claude, Google’s Gemini, and xAI’s Grok using a transformer-based classifier.
+This project investigates political bias in large language models (LLMs) by analyzing their responses to politically sensitive prompts using an open-source BERT-based classifier from Hugging Face. Models evaluated include OpenAI’s ChatGPT, Anthropic’s Claude, Google’s Gemini, and xAI’s Grok.
 
 The goal is to classify responses as Left, Center, or Right-leaning, visualize distribution patterns, and reflect on the ethical implications of political bias in generative AI.
 
 ---
+
+## Methodology
+
+### 1. Prompt Selection
+Forty politically relevant prompts covering contemporary issues were curated, including:  
+- Gun control, healthcare, and immigration  
+- DEI programs in workplaces  
+- Transgender athletes in sports  
+- Abortion access and reproductive rights  
+
+### 2. Model Response Collection
+- Each prompt was submitted to four LLMs under consistent settings using fresh accounts.  
+- Each model generated a textual response (e.g., headlines), collected into a shared CSV dataset.  
+
+### 3. Bias Classification
+- Responses were labeled using the **politicalBiasBERT** transformer model from Hugging Face.  
+- Each response was assigned a label: **Left**, **Center**, or **Right**.  
+- A pretrained classifier was used for efficiency and reliability, leveraging its fine-tuning on political bias detection tasks and GPU acceleration for batch processing.  
+
+### 4. Data Analysis & Visualization
+- Results were stored in a structured CSV containing prompts, responses, the model name, and predicted bias.  
+- Visualizations were created using **matplotlib** and **pandas**, including:  
+  - Overall bias distribution charts  
+  - Prompt-level heatmaps  
+  - Comparative bar graphs across models
 
 ## Project Structure
 
