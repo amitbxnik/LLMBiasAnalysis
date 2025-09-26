@@ -1,7 +1,7 @@
-# CSE 3000 Final Project - Bias Analysis
+# Large Language Model Bias Analysis
 
 ## Project Overview
-This project investigates political bias in large language models (LLMs) by analyzing their responses to politically sensitive prompts. We evaluated models such as OpenAI’s ChatGPT, Anthropic’s Claude, Google’s Gemini, and xAI’s Grok using a transformer-based classifier.
+This project investigates political bias in large language models (LLMs) by analyzing their responses to politically sensitive prompts. This project evaluated models such as OpenAI’s ChatGPT, Anthropic’s Claude, Google’s Gemini, and xAI’s Grok using a transformer-based classifier.
 
 The goal is to classify responses as Left, Center, or Right-leaning, visualize distribution patterns, and reflect on the ethical implications of political bias in generative AI.
 
@@ -96,10 +96,4 @@ Step 2: Generate Visualizations
 Install all requirements with: pip install -r requirements.txt
 
 ---
-
-## Author
-
-- Name: Matt Huang, Amit Banik, Tom Kuriakose, Ethan Ondek
-- University of Connecticut — CSE 3000
-- Semester: Spring 2025
 
